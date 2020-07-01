@@ -5,7 +5,7 @@ import { BaseComponent } from './_layout/base/base.component';
 import { NoAuthComponent } from './_layout/no-auth/no-auth.component';
 import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { BenifitsComponent } from './components/common/benifits/benifits.component';
+import { BenefitsComponent } from './components/common/benefits/benefits.component';
 import { TermsComponent } from './components/common/terms/terms.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
@@ -28,7 +28,7 @@ const routes: Routes = [
   },
 
   // Common routes for both authorize user and guest user
-  { path: 'benifits', component: BenifitsComponent },
+  { path: 'benefits', component: BenefitsComponent },
   { path: 'terms', component: TermsComponent }
 ];
 
