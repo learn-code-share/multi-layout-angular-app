@@ -7,12 +7,14 @@ import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { BenifitsComponent } from './components/common/benifits/benifits.component';
 import { TermsComponent } from './components/common/terms/terms.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 const routes: Routes = [
   // Authenticated Routes
   {
-    path: '', component: BaseComponent, children: [
+    path: '', component: BaseComponent, canActivate: [AuthGuard], children: [
       { path: '', component: HomeComponent }
     ]
   },
@@ -20,7 +22,8 @@ const routes: Routes = [
   // Guest Routes
   {
     path: '', component: NoAuthComponent, children: [
-      { path: 'welcome', component: WelcomeComponent }
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'login', component: LoginComponent }
     ]
   },
 

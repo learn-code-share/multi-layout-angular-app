@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-base',
@@ -9,10 +11,23 @@ import { environment } from 'src/environments/environment';
 export class BaseComponent implements OnInit {
 
   appName: string;
-  constructor() { }
+  username: string;
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+    authService.currentUser.subscribe(data => {
+      this.username = data.name;
+    });
+  }
 
   ngOnInit(): void {
     this.appName = environment.appName;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['welcome']);
   }
 
 }

@@ -13,7 +13,13 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/terms']">Terms</a>
         </li>
-        <!-- Other Routes will go here-->
+
+        <li class="nav-item">
+          <a class="nav-link">Welcome {{username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);" (click)="logout()">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
