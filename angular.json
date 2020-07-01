@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "multi-layout-angular-app": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "multi-layout-angular-app"
+    }
+  },
+  "defaultProject": "multi-layout-angular-app",
+  "cli": {
+    "analytics": "21f3de31-7e80-4652-a50a-498937199a3e"
+  }
 }
