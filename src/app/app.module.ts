@@ -11,6 +11,7 @@ import { TermsComponent } from './components/common/terms/terms.component';
 import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
+import { BaseLayoutComponent } from './_layout/base-layout/base-layout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './components/login/login.component';
     TermsComponent,
     HomeComponent,
     WelcomeComponent,
-    LoginComponent
+    LoginComponent,
+    BaseLayoutComponent
   ],
   imports: [
     BrowserModule,

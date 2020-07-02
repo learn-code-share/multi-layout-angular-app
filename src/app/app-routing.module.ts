@@ -9,27 +9,24 @@ import { BenefitsComponent } from './components/common/benefits/benefits.compone
 import { TermsComponent } from './components/common/terms/terms.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './helpers/auth.guard';
+import { BaseLayoutComponent } from './_layout/base-layout/base-layout.component';
 
 
 const routes: Routes = [
-  // Authenticated Routes
   {
-    path: '', component: BaseComponent, canActivate: [AuthGuard], children: [
-      { path: '', component: HomeComponent }
-    ]
-  },
+    path: '', component: BaseLayoutComponent, children: [
+      // Authenticated Routes
+      { path: '', component: HomeComponent },
 
-  // Guest Routes
-  {
-    path: '', component: NoAuthComponent, children: [
+      // Guest Routes
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+
+      // Common routes for both authorize user and guest user
+      { path: 'benefits', component: BenefitsComponent },
+      { path: 'terms', component: TermsComponent }
     ]
   },
-
-  // Common routes for both authorize user and guest user
-  { path: 'benefits', component: BenefitsComponent },
-  { path: 'terms', component: TermsComponent }
 ];
 
 @NgModule({
